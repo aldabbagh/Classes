@@ -1,0 +1,116 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.SimpleCart -S 1 -M 1.0 -N 5 -U -C 1.0
+Relation:     wdbc-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.StringToNominal-Rfirst-weka.filters.unsupervised.attribute.StringToNominal-Rfirst-weka.filters.unsupervised.attribute.StringToNominal-Rfirst
+Instances:    568
+Attributes:   31
+              M
+              17.99
+              10.38
+              122.8
+              1001
+              0.1184
+              0.2776
+              0.3001
+              0.1471
+              0.2419
+              0.07871
+              1.095
+              0.9053
+              8.589
+              153.4
+              0.006399
+              0.04904
+              0.05373
+              0.01587
+              0.03003
+              0.006193
+              25.38
+              17.33
+              184.6
+              2019
+              0.1622
+              0.6656
+              0.7119
+              0.2654
+              0.4601
+              0.1189
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+CART Decision Tree
+
+25.38 < 16.795
+|  0.2654 < 0.13579999999999998
+|  |  1.095 < 1.04755
+|  |  |  153.4 < 38.605000000000004
+|  |  |  |  0.006399 < 0.003294
+|  |  |  |  |  10.38 < 19.9: B(6.0/0.0)
+|  |  |  |  |  10.38 >= 19.9: M(1.0/0.0)
+|  |  |  |  0.006399 >= 0.003294
+|  |  |  |  |  17.33 < 33.269999999999996: B(292.0/0.0)
+|  |  |  |  |  17.33 >= 33.269999999999996
+|  |  |  |  |  |  17.33 < 33.56: M(1.0/0.0)
+|  |  |  |  |  |  17.33 >= 33.56: B(19.0/0.0)
+|  |  |  153.4 >= 38.605000000000004
+|  |  |  |  0.2776 < 0.05957: M(1.0/0.0)
+|  |  |  |  0.2776 >= 0.05957
+|  |  |  |  |  1.095 < 0.4212: M(1.0/0.0)
+|  |  |  |  |  1.095 >= 0.4212: B(11.0/0.0)
+|  |  1.095 >= 1.04755: M(1.0/0.0)
+|  0.2654 >= 0.13579999999999998
+|  |  17.33 < 25.67
+|  |  |  2019 < 810.3
+|  |  |  |  0.1184 < 0.12265: B(14.0/0.0)
+|  |  |  |  0.1184 >= 0.12265: M(1.0/0.0)
+|  |  |  2019 >= 810.3
+|  |  |  |  17.99 < 14.190000000000001: M(3.0/0.0)
+|  |  |  |  17.99 >= 14.190000000000001: B(1.0/0.0)
+|  |  17.33 >= 25.67
+|  |  |  0.3001 < 0.09679
+|  |  |  |  10.38 < 19.435000000000002: B(3.0/0.0)
+|  |  |  |  10.38 >= 19.435000000000002: M(3.0/0.0)
+|  |  |  0.3001 >= 0.09679: M(21.0/0.0)
+25.38 >= 16.795
+|  10.38 < 16.11
+|  |  0.1471 < 0.06626: B(9.0/0.0)
+|  |  0.1471 >= 0.06626: M(7.0/0.0)
+|  10.38 >= 16.11
+|  |  0.1622 < 0.08798: B(1.0/0.0)
+|  |  0.1622 >= 0.08798
+|  |  |  0.7119 < 0.17975000000000002
+|  |  |  |  10.38 < 20.674999999999997: B(1.0/0.0)
+|  |  |  |  10.38 >= 20.674999999999997: M(3.0/0.0)
+|  |  |  0.7119 >= 0.17975000000000002: M(168.0/0.0)
+
+Number of Leaf Nodes: 22
+
+Size of the Tree: 43
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         522               91.9014 %
+Incorrectly Classified Instances        46                8.0986 %
+Kappa statistic                          0.8259
+Mean absolute error                      0.081 
+Root mean squared error                  0.2846
+Relative absolute error                 17.338  %
+Root relative squared error             58.894  %
+Total Number of Instances              568     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.882     0.059      0.899     0.882     0.89       0.911    M
+                 0.941     0.118      0.931     0.941     0.936      0.911    B
+Weighted Avg.    0.919     0.096      0.919     0.919     0.919      0.911
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 186  25 |   a = M
+  21 336 |   b = B

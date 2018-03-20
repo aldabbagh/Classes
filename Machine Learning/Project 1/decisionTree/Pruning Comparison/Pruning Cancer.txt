@@ -1,0 +1,84 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.SimpleCart -S 1 -M 1.0 -N 5 -C 1.0
+Relation:     wdbc-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.StringToNominal-Rfirst-weka.filters.unsupervised.attribute.StringToNominal-Rfirst-weka.filters.unsupervised.attribute.StringToNominal-Rfirst
+Instances:    568
+Attributes:   31
+              M
+              17.99
+              10.38
+              122.8
+              1001
+              0.1184
+              0.2776
+              0.3001
+              0.1471
+              0.2419
+              0.07871
+              1.095
+              0.9053
+              8.589
+              153.4
+              0.006399
+              0.04904
+              0.05373
+              0.01587
+              0.03003
+              0.006193
+              25.38
+              17.33
+              184.6
+              2019
+              0.1622
+              0.6656
+              0.7119
+              0.2654
+              0.4601
+              0.1189
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+CART Decision Tree
+
+25.38 < 16.795
+|  0.2654 < 0.13579999999999998: B(328.0/5.0)
+|  0.2654 >= 0.13579999999999998
+|  |  17.33 < 25.67: B(15.0/4.0)
+|  |  17.33 >= 25.67: M(24.0/3.0)
+25.38 >= 16.795
+|  10.38 < 16.11
+|  |  0.1471 < 0.06626: B(9.0/0.0)
+|  |  0.1471 >= 0.06626: M(7.0/0.0)
+|  10.38 >= 16.11: M(171.0/2.0)
+
+Number of Leaf Nodes: 6
+
+Size of the Tree: 11
+
+Time taken to build model: 0.08 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         523               92.0775 %
+Incorrectly Classified Instances        45                7.9225 %
+Kappa statistic                          0.8295
+Mean absolute error                      0.0991
+Root mean squared error                  0.2735
+Relative absolute error                 21.216  %
+Root relative squared error             56.6019 %
+Total Number of Instances              568     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.882     0.056      0.903     0.882     0.892      0.929    M
+                 0.944     0.118      0.931     0.944     0.937      0.929    B
+Weighted Avg.    0.921     0.095      0.921     0.921     0.921      0.929
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 186  25 |   a = M
+  20 337 |   b = B
