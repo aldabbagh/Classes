@@ -1,0 +1,81 @@
+<div class="row my-4">
+  <div class="col-12">
+    <!-- Customer Info -->
+    <h1 class="h2">Reservation Summary</h2>
+      <dl class="row">
+        <dt class="col-sm-3 col-lg-2">Reservation Dates</dt>
+        <dd class="col-sm-9 col-lg-10">
+          {{ Reservation.start_date }} - {{ Reservation.end_date }}
+        </dd>
+
+        <dt class="col-sm-3 col-lg-2">Number of days</dt>
+        <dd class="col-sm-9 col-lg-10">
+          calc()
+        </dd>
+
+        <!-- If exists-->
+        <dt class="col-sm-3 col-lg-2">Total deposit price</dt>
+        <dd class="col-sm-9 col-lg-10">
+          calc()
+        </dd>
+
+        <!-- If exists-->
+        <dt class="col-sm-3 col-lg-2">Total rental price</dt>
+        <dd class="col-sm-9 col-lg-10">
+          calc()
+        </dd>
+      </dl>
+  </div>
+</div>
+
+<h1 class="h2">Tools</h2>
+
+</div><!-- Close main page container-->
+<div class="container-fluid">
+
+  <!-- Tools -->
+  <table class="table table-sm table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Description</th>
+        <th scope="col">Deposit Price</th>
+        <th scope="col">Rental Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- for each tool in reservation -->
+      <tr>
+        <th scope="row">
+          <a href="/tool_details.php?id={{ Tool.tool_number }}">
+            {{ Tool.tool_number }}
+          </a>
+        </th>
+        <td>
+          {{ Tool.power_source }}
+          {{ Tool.sub_option }}
+          {{ Tool.sub_type }}
+        </td>
+        <td>{{ Tool.price * 0.40 }}</td>
+        <td>{{ Tool.price * 0.15 }}</td>
+      </tr>
+      <!-- end for -->
+      <tr>
+        <th scope="row" colspan="2">Totals</th>
+        <th scope="col">{{ Tool.price * 0.40 }}</td>
+        <th scope="col">{{ Tool.price * 0.15 }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+<div class="container">
+  <a href="/confirm_reservation.php?tool={{ list of tools }}"
+    class="btn btn-primary">
+    Confirm
+  </a>
+  <a href="/make_reservation.php" class="btn btn-secondary">Reset</a>
+</div>
+
+</div>
+<div class="container"><!-- Re-open main page container-->

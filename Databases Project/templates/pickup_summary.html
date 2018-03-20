@@ -1,0 +1,130 @@
+<div class="row my-4">
+  <div class="col-12">
+    <!-- Reservatoin Summary -->
+    <h1 class="h2">
+      Pick-Up Reservation</br>
+      <small class="text-muted">
+        Confirmation #: {{ Rental.confirmation_number }}
+      </small>
+    </h2>
+    <dl class="row">
+      <dt class="col-sm-3 col-lg-2">Customer name</dt>
+      <dd class="col-sm-9 col-lg-10">
+        {{ Customer.first_name }}
+        {{ Customer.middle_name }}
+        {{ Customer.last_name }}
+      </dd>
+
+      <dt class="col-sm-3 col-lg-2">Total deposit price</dt>
+      <dd class="col-sm-9 col-lg-10">
+        calc()
+      </dd>
+
+      <dt class="col-sm-3 col-lg-2">Total rental price</dt>
+      <dd class="col-sm-9 col-lg-10">
+        calc()
+      </dd>
+    </dl>
+
+    <!-- Credit card form -->
+    <form action="/confirm_pickup.php"
+      method="post"
+      enctype="multipart/form-data">
+      <fieldset class="form-group">
+        <legend class="h6">Credit card</legend>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" id="cc-existing"
+              type="radio"
+              name="cc-status"
+              value="existing"
+              checked
+              onclick="$('#cc-fieldset').collapse('hide');"> Existing
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" id="cc-new"
+              type="radio"
+              name="cc-status"
+              value="new"
+              onclick="$('#cc-fieldset').collapse('show');"> New
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-group collapse" id="cc-fieldset">
+        <div class="form-row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="cc-name">Name</label>
+              <input class="form-control" id="cc-name"
+                name="cc-name"
+                type="text"
+                placeholder="Name on card">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="cc-number">Number</label>
+              <input class="form-control" id="cc-number"
+                name="cc-number"
+                type="text"
+                placeholder="Credit card number">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="cc-month">Expiration Month</label>
+              <select class="form-control" id="cc-month"
+                name="cc-month">
+                <option value="" disabled selected hidden>
+                  Select a month
+                </option>
+                <option value="1">January</option>
+                <option value="2">Feburary</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="cc-year">Expiration Year</label>
+              <select class="form-control" id="cc-year"
+                name="cc-year">
+                <option value="" disabled selected hidden>
+                  Select a year
+                </option>
+                <!-- Generate a list of years starting from current -->
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="cc-cvc">CVC</label>
+              <input class="form-control" id="cc-cvc"
+                name="cc-cvc"
+                type="text"
+                placeholder="Security number on back of card">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Confirm -->
+      <button type="submit" class="btn btn-primary">
+        Confirm Pick-Up
+      </button>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,95 @@
+<div class="row my-4">
+  <div class="col-12">
+    <!-- Customer Info -->
+    <h1 class="h2">Customer Info</h2>
+      <dl class="row">
+        <dt class="col-sm-3 col-lg-2">Email</dt>
+        <dd class="col-sm-9 col-lg-10">
+          {{ Customer.email }}
+        </dd>
+
+        <dt class="col-sm-3 col-lg-2">Full Name</dt>
+        <dd class="col-sm-9 col-lg-10">
+          {{ Customer.first_name }}
+          {{ Customer.middle_name }}
+          {{ Customer.last_name }}
+        </dd>
+
+        <!-- If exists-->
+        <dt class="col-sm-3 col-lg-2">Home Phone</dt>
+        <dd class="col-sm-9 col-lg-10">
+          ({{ PhoneNumber.area_code }})
+          {{ PhoneNumber.phone_number }}
+          ext. {{ PhoneNumber.extension }}
+        </dd>
+
+        <!-- If exists-->
+        <dt class="col-sm-3 col-lg-2">Work Phone</dt>
+        <dd class="col-sm-9 col-lg-10">
+          ({{ PhoneNumber.area_code }})
+          {{ PhoneNumber.phone_number }}
+          ext. {{ PhoneNumber.extension }}
+        </dd>
+
+        <!-- If exists-->
+        <dt class="col-sm-3 col-lg-2">Cell Phone</dt>
+        <dd class="col-sm-9 col-lg-10">
+          ({{ PhoneNumber.area_code }})
+          {{ PhoneNumber.phone_number }}
+          ext. {{ PhoneNumber.extension }}
+        </dd>
+
+        <dt class="col-sm-3 col-lg-2">Address</dt>
+        <dd class="col-sm-9 col-lg-10">
+          {{ Customer.street }},
+          {{ Customer.city }},
+          {{ Customer.state }}
+          {{ Customer.9_digit_zip }}
+        </dd>
+      </dl>
+  </div>
+</div>
+
+<h1 class="h2">Reservations</h2>
+
+</div><!-- Close main page container-->
+<div class="container-fluid">
+
+  <!-- Reservations -->
+  <table class="table table-sm table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tools</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Pickup Clerk</th>
+        <th scope="col">Dropoff Clerk</th>
+        <th scope="col">Number of Days</th>
+        <th scope="col">Total Deposit Price</th>
+        <th scope="col">Total Rental Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- for each reservation -->
+      <tr>
+        <th scope="row">{{R.confirmation_number}}</th>
+        <td>
+          <!-- for each tool in reservation -->
+          {{T.power_source}} {{T.sub_option}} {{T.sub_type}}
+          <!-- end for -->
+        </td>
+        <td>{{R.start_date}}</td>
+        <td>{{R.end_date}}</td>
+        <td>{{R.pickup_clerk_username}}</td>
+        <td>{{R.dropoff_clerk_username}}</td>
+        <td>calc()</td>
+        <td>calc()</td>
+        <td>calc()</td>
+      </tr>
+      <!-- end for -->
+    </tbody>
+  </table>
+
+</div>
+<div class="container"><!-- Re-open main page container-->

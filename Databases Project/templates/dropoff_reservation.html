@@ -1,0 +1,66 @@
+<div class="row my-4">
+  <div class="col-12">
+    <!-- Reservatoin needing drop-off -->
+    <h1 class="h2">Drop-Off Reservation</h2>
+
+  </div>
+</div>
+
+</div><!-- Close main page container-->
+
+<div class="container-fluid">
+<table class="table table-sm table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Confirmation #</th>
+      <th scope="col">Customer</th>
+      <th scope="col">Customer username</th>
+      <th scope="col">Start date</th>
+      <th scope="col">End date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- for each reservation -->
+    <tr>
+      <th scope="row">
+        <a href="/rental_details.php?id={{ R.confirmation_number }}">
+          {{ Rental.confirmation_number }}
+        </a>
+      </th>
+      <td>{{ Customer.last_name }}</td>
+      <td>{{ Customer.username }}</td>
+      <td>{{ Rental.start_date }}</td>
+      <td>{{ Rental.end_date }}</td>
+    </tr>
+    <!-- end for -->
+  </tbody>
+</table>
+
+</div>
+<div class="container">
+<hr>
+<form action="/dropoff_summary.php"
+  method="post"
+  enctype="multipart/form-data">
+  <!-- Confirmation # -->
+  <div class="form-row">
+    <div class="col-sm-8 col-lg-4">
+      <div class="form-group">
+        <label for="confirmation-number">Confirmation number</label>
+        <input class="form-control" id="confirmation-number"
+          name="confirmation-number"
+          placeholder="Confirmation #">
+      </div>
+    </div>
+    <div class="col-sm-4 col-lg-2 align-self-end">
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">
+          Drop-Off
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+</div>
+<div class="container"><!-- Re-open main page container-->

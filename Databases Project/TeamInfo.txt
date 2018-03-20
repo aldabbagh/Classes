@@ -1,0 +1,7 @@
+Team44:
+Mohamed ElSaadany     email: melsaadany3@gatech.edu
+Mohammed Aldabbagh    email: maldabbagh3@gatech.edu
+Ahmad Aldabbagh       email: aaldabbagh3@gatech.edu
+
+
+SQL File: /sql/team044_p2_schema.sql

@@ -1,0 +1,47 @@
+<div class="row my-4">
+  <div class="col-12">
+    <!-- Tool Details -->
+    <h1 class="h2">
+      Tool Details</br>
+      <small class="text-muted">
+        {{ Tool.power_source }}
+        {{ Tool.sub_option }}
+        {{ Tool.sub_type }}
+      </small>
+    </h2>
+      <dl class="row">
+        <dt class="col-sm-3 col-lg-2">Tool nuber</dt>
+        <dd class="col-sm-9 col-lg-10">
+          {{ Tool.tool_number }}
+        </dd>
+
+        <dt class="col-sm-3 col-lg-2">Type</dt>
+        <dd class="col-sm-9 col-lg-10">
+          calc()
+        </dd>
+
+        <dt class="col-sm-3 col-lg-2">Full Description</dt>
+        <dd class="col-sm-9 col-lg-10">
+          {{ Tool.width_diameter }} in. x {{ Tool.length }} in.
+          {{ Tool.weight }} lb.
+          {{ Tool.power_source }}
+          {{ Tool.sub_option }}
+          {{ Tool.sub_type }}
+          [{{ type and subtype specific attributes }}]
+          by {{ Tool.manufacturer }}
+        </dd>
+
+        <!-- If exists-->
+        <dt class="col-sm-3 col-lg-2">Deposit price</dt>
+        <dd class="col-sm-9 col-lg-10">
+          {{ Tool.price * 0.40 }}
+        </dd>
+
+        <!-- If exists-->
+        <dt class="col-sm-3 col-lg-2">Rental price</dt>
+        <dd class="col-sm-9 col-lg-10">
+          {{ Tool.price  * 0.15}}
+        </dd>
+      </dl>
+  </div>
+</div>

@@ -1,0 +1,127 @@
+<div class="row justify-content-between my-4">
+  <div class="col-md-6">
+    <!-- Report Header -->
+    <h1 class="h2">Tool Inventory Report</h1>
+    <p class="lead mb-0">Lists all tools along with their cost and total profit for all time.</p>
+  </div>
+  <div class="col-auto align-self-end">
+    <a href="/report_tool.php" class="btn btn-secondary">
+      Reload results
+    </a>
+  </div>
+</div>
+
+<!-- Filtering -->
+<form class="form-row"
+  action="/report_tool.php"
+  method="post"
+  enctype="multipart/form-data">
+  <!-- Tool type -->
+  <fieldset class="col-xl-7 form-group">
+    <legend class="h6">Tool type</legend>
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input class="form-check-input" id="tool-type-all"
+          type="radio"
+          name="tool-type"
+          value="all"
+          checked> All tools
+      </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input class="form-check-input" id="tool-type-hand"
+          type="radio"
+          name="tool-type"
+          value="hand"> Hand tool
+      </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input class="form-check-input" id="tool-type-garden"
+          type="radio"
+          name="tool-type"
+          value="garden"> Garden tool
+      </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input class="form-check-input" id="tool-type-ladder"
+          type="radio"
+          name="tool-type"
+          value="ladder"> Ladder
+      </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input class="form-check-input" id="tool-type-power"
+          type="radio"
+          name="tool-type"
+          value="power"> Power tool
+      </label>
+    </div>
+  </fieldset>
+
+  <!-- Keyword -->
+  <div class="col-lg-5 col-xl-4">
+    <div class="form-group">
+      <label for="keyword">Custom search</label>
+      <input class="form-control" id="keyword"
+        name="keyword"
+        type="text"
+        placeholder="Keywords">
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="col-lg-auto col-xl-1 align-self-end">
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block">
+        Search
+      </button>
+    </div>
+  </div>
+</form>
+
+</div><!-- Close main page container-->
+<div class="container-fluid">
+
+<!-- Report table-->
+<table class="table table-sm table-hove">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Tool number</th>
+      <th scope="col">Status</th>
+      <th scope="col">Return date</th>
+      <th scope="col">Description</th>
+      <th scope="col">Rental profit</th>
+      <th scope="col">Total cost</th>
+      <th scope="col">Total profit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- for each tool in database -->
+    <tr>
+      <td>{{ Tool.tool_number }}</td>
+      <td>
+        <span class="badge badge-success t4r-badge">Available</span> Or
+        <span class="badge badge-warning t4r-badge">Rented</span>
+      </td>
+      <td>- Or {{ Rental.end_date }}</td>
+      <td>
+        <a href="/tool_details.php?id={{ Tool.tool_number }}">
+          {{ Tool.power_source }}
+          {{ Tool.sub_option }}
+          {{ Tool.sub_type }}
+        </a>
+      </td>
+      <td>calc()</td>
+      <td>{{ Tool.price }}</td>
+      <td>calc()</td>
+    </tr>
+    <!-- end for -->
+  </tbody>
+</table>
+
+</div>
+<div class="container"><!-- Re-open main page container-->

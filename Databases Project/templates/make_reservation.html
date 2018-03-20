@@ -1,0 +1,90 @@
+<div class="row my-4">
+  <div class="col-12">
+    <h1 class="h2">Make Reservation</h2>
+      <!-- ########################################################## SEARCH -->
+      <!-- customer_tool_searc.html partial Goes here -->
+      <!-- ###################################################### END SEARCH -->
+
+    <hr>
+    <h2 class="h3">Available Tools</h2>
+
+  </div>
+</div>
+
+</div><!-- Close main page container-->
+<div class="container-fluid">
+
+<!-- Search Results -->
+<table class="table table-sm table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Description</th>
+      <th scope="col">Rental Price</th>
+      <th scope="col">Deposit Price</th>
+      <th scope="col">Add</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- for each unreserved tool based on filters -->
+    <tr>
+      <th scope="row">
+        <a href="/tool_details.php?id={{ T.tool_number }}">
+          {{ T.tool_number }}
+        </a>
+      </th>
+      <td>{{ T.power_source }} {{ T.sub_option }} {{ T.sub_type }}</td>
+      <td>{{ T.price * 0.15 }}</td>
+      <td>{{ T.price * 0.40 }}</td>
+      <td>
+        <button type="button" class="btn btn-secondary"
+          style="width: 14em;">
+          Add to Reservation
+        </button>
+      </td>
+    </tr>
+    <!-- end for -->
+  </tbody>
+</table>
+
+</div>
+<div class="container">
+<hr>
+<h2 class="h3">Tools Added to reservation</h2>
+</div>
+<div class="container-fluid">
+
+<!-- Reserved Tools -->
+<table class="table table-sm table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Description</th>
+      <th scope="col">Rental Price</th>
+      <th scope="col">Deposit Price</th>
+      <th scope="col">Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Generated client-side -->
+    <tr>
+      <th scope="row">
+        <a href="/tool_details.php?id={{ T.tool_number }}">
+          {{ T.tool_number }}
+        </a>
+      </th>
+      <td>{{ T.power_source }} {{ T.sub_option }} {{ T.sub_type }}</td>
+      <td>{{ T.price * 0.15 }}</td>
+      <td>{{ T.price * 0.40 }}</td>
+      <td>
+        <button type="button" class="btn btn-danger"
+          style="width: 14em;">
+          Remove from reservation
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+<div class="container"><!-- Re-open main page container-->

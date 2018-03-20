@@ -1,0 +1,54 @@
+<div class="row justify-content-between my-4">
+  <div class="col-md-6">
+    <!-- Report Header -->
+    <h1 class="h2">Customer Report</h1>
+    <p class="lead mb-0">The list of customers who made reservations in the current month.</p>
+  </div>
+  <div class="col-auto align-self-end">
+    <a href="/report_customer.php" class="btn btn-secondary">
+      Reload results
+    </a>
+  </div>
+</div>
+
+</div><!-- Close main page container-->
+<div class="container-fluid">
+
+<!-- Report table-->
+<table class="table table-sm table-hove">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Customer usernamer</th>
+      <th scope="col">Profile page</th>
+      <th scope="col">Full name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Primary phone</th>
+      <th scope="col">Total reservations</th>
+      <th scope="col">Total tools</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- for each Customer who made a reservation in current month -->
+    <tr>
+      <td>{{ Customer.username }}</td>
+      <td>
+        <a href="/view_profile.php?id={{ Customer.email }}">
+          View profile
+        </a>
+      </td>
+      <td>
+        {{ Customer.first_name }}
+        {{ Customer.middle_name }}
+        {{ Customer.last_name }}
+      </td>
+      <td>{{ Customer.email }}</td>
+      <td>{{ PhoneNumber.* where is_primary=true }}</td>
+      <td>calc()</td>
+      <td>calc()</td>
+    </tr>
+    <!-- end for -->
+  </tbody>
+</table>
+
+</div>
+<div class="container"><!-- Re-open main page container-->

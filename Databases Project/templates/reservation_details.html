@@ -1,0 +1,46 @@
+<div class="row my-4">
+  <div class="col-12">
+    <!-- Tool Details -->
+    <h1 class="h2">
+      Reservation Details</br>
+      <small class="text-muted">
+        Confirmation #: {{ Rental.confirmation_number }}
+      </small>
+    </h1>
+
+    <dl class="row">
+      <dt class="col-sm-3 col-lg-2">Customer name</dt>
+      <dd class="col-sm-9 col-lg-10">
+        {{ Customer.first_name }}
+        {{ Customer.middle_name }}
+        {{ Customer.last_name }}
+      </dd>
+
+      <dt class="col-sm-3 col-lg-2">Total deposit price</dt>
+      <dd class="col-sm-9 col-lg-10">
+        calc()
+      </dd>
+
+      <dt class="col-sm-3 col-lg-2">Total rental price</dt>
+      <dd class="col-sm-9 col-lg-10">
+        calc()
+      </dd>
+    </dl>
+
+    <div class="card border-dark">
+      <h2 class="card-header h3">
+        Tools
+      </h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <a href="/tool_details.php?id={{ Tool.tool_number }}">
+            {{ Tool.power_source }}
+            {{ Tool.sub_option }}
+            {{ Tool.sub_type }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>

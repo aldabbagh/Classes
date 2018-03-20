@@ -1,0 +1,99 @@
+<div class="row my-4">
+  <div class="col-12">
+    <!-- Final Receipt -->
+    <h1 class="h2">
+      Drop-Off Reservation</br>
+      <small class="text-muted">
+        Final Receipt
+      </small>
+    </h1>
+
+    <!-- Rental details -->
+    <dl class="row">
+      <dt class="col-sm-3 col-lg-2">Pick-Up clerk</dt>
+      <dd class="col-sm-9 col-lg-10">
+        {{ Rental.pickup_clerk_username }}
+      </dd>
+
+      <dt class="col-sm-3 col-lg-2">Drop-Off clerk</dt>
+      <dd class="col-sm-9 col-lg-10">
+        {{ Rental.dropoff_clerk_username }}
+      </dd>
+
+      <dt class="col-sm-3 col-lg-2">Customer name</dt>
+      <dd class="col-sm-9 col-lg-10">
+        {{ Customer.first_name }}
+        {{ Customer.middle_name }}
+        {{ Customer.last_name }}
+      </dd>
+
+      <dt class="col-sm-3 col-lg-2">Credit card number</dt>
+      <dd class="col-sm-9 col-lg-10">
+        {{ Customer.card_number }}
+      </dd>
+
+      <dt class="col-sm-3 col-lg-2">Start date</dt>
+      <dd class="col-sm-9 col-lg-10">
+        {{ Rental.start_date }}
+      </dd>
+
+      <dt class="col-sm-3 col-lg-2">End date</dt>
+      <dd class="col-sm-9 col-lg-10">
+        {{ Rental.end_date }}
+      </dd>
+    </dl>
+
+  </div>
+</div>
+
+</div><!-- Close main page container-->
+
+<div class="container-fluid">
+<!-- Rental tools -->
+<table class="table table-sm table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Tool number</th>
+      <th scope="col">Tool name</th>
+      <th scope="col">Deposit price</th>
+      <th scope="col">Rental price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- for each tool -->
+    <tr>
+      <th scope="row">{{ Tool.tool_number }}</th>
+      <td>
+        <a href="/tool_details.php?id={{ Tool.tool_number }}">
+          {{ Tool.power_source }}
+          {{ Tool.sub_option }}
+          {{ Tool.sub_type }}
+        </a>
+      </td>
+      <td>{{ Tool.price * 0.40 }}</td>
+      <td>{{ Tool.price * 0.15 }}</td>
+    </tr>
+    <!-- end for -->
+
+    <tr>
+      <th scope="row" colspan="2">Totals</th>
+      <th scope="col">calc()</th>
+      <th scope="col">calc()</th>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<div class="container">
+<!-- Print button -->
+<hr>
+<div class="form-group my-4">
+  <button type="button" class="btn btn-info"
+    onclick="window.print();">
+    Print Final Receipt
+  </button>
+</div>
+</div>
+
+<div class="container"><!-- Re-open main page container-->

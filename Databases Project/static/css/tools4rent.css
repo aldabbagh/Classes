@@ -1,0 +1,50 @@
+.t4r-brand-4 {
+  display: inline-block;
+  position: relative;
+  top: 0.3rem;
+  font-size: 1.75em;
+  font-weight: bold;
+  line-height: 1.25rem;
+  animation: rotate 0.25s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    color: #fff;
+  }
+  100% {
+    transform: rotate(360deg);
+    color: #fff;
+  }
+}
+
+.t4r-signature {
+  display: block;
+  border-top: 1px dashed #888;
+  width: 100%;
+}
+.t4r-signature-date {
+  display: block;
+  border-bottom: 1px dashed #888;
+  width: 100%;
+}
+
+.t4r-badge {
+  font-size: inherit;
+}
+
+#t4r-addtool .accessory:first-child label {
+  display: block !important;
+}
+
+@media screen {
+  .t4r-print {
+    display: none;
+  }
+}
+@media print {
+  .t4r-screen {
+    display: none;
+  }
+}

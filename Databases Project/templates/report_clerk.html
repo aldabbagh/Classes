@@ -1,0 +1,50 @@
+<div class="row justify-content-between my-4">
+  <div class="col-md-6">
+    <!-- Report Header -->
+    <h1 class="h2">Clerk Report</h1>
+    <p class="lead mb-0">The list of clerks along with their details and total pickups and dropoffs for the current month.</p>
+  </div>
+  <div class="col-auto align-self-end">
+    <a href="/report_clerk.php" class="btn btn-secondary">
+      Reload results
+    </a>
+  </div>
+</div>
+
+</div><!-- Close main page container-->
+<div class="container-fluid">
+
+<!-- Report table-->
+<table class="table table-sm table-hove">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Clerk usernamer</th>
+      <th scope="col">Full name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Hire date</th>
+      <th scope="col">Pickups</th>
+      <th scope="col">Dropoffs</th>
+      <th scope="col">Combined total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- for each clerk in database -->
+    <tr>
+      <td>{{ Clerk.username }}</td>
+      <td>
+        {{ Clerk.first_name }}
+        {{ Clerk.middle_name }}
+        {{ Clerk.last_name }}
+      </td>
+      <td>{{ Clerk.email }}</td>
+      <td>{{ Clerk.date_of_hire }}</td>
+      <td>calc()</td>
+      <td>calc()</td>
+      <td>calc()</td>
+    </tr>
+    <!-- end for -->
+  </tbody>
+</table>
+
+</div>
+<div class="container"><!-- Re-open main page container-->
