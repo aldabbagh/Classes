@@ -1,0 +1,362 @@
+% Latex / Beamer template for the Georgia Tech's CS6476 class.
+% This template is set to render images that are located in the output 
+% folder. The following directory structure is assumed:
+%
+% psXY/
+%     output/
+%         psX-a-b-c.png
+%         psX-d-e-f.png
+%         ...
+%     this_file.tex
+%
+% If a different structure is used, the images path must be changed in 
+% each call of \begin{figure} ... \end{figure}
+%
+% Your Name and email address must be added in the \author definition.
+%
+% This file is set initially as a draft as showed in the \documentclass statement. 
+% In order for the your images to show, the 'draft' option should be removed or 
+% replaced by 'final'. Please note that once this feature is changed, there will be 
+% compilation errors if an image cannot be found.
+
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{tikz}
+\usepackage[font={bf, small},labelformat=empty]{caption}
+\usepackage[caption=false]{subfig}
+\captionsetup[subfigure]{labelformat=empty, font={bf, Large}}
+
+\setbeamertemplate{itemize items}[ball]
+\setbeamercolor*{item}{fg=black}
+\usefonttheme{structurebold}
+
+\usebackgroundtemplate{
+	\begin{tikzpicture}
+	\shade [outer color = gray!20, inner color = white]
+	(0,0) rectangle (\paperwidth,\paperheight);
+	\end{tikzpicture}}
+
+\setbeamerfont{title}{series=\bfseries,parent=structure,size=\Huge}
+\setbeamercolor{title}{fg=black}
+\title{Computer Vision\\ 
+	    Spring 2017\\ 
+	    Problem Set \# 2}
+
+\setbeamerfont{author}{size=\LARGE}
+\setbeamercolor{author}{fg=black}
+\author{Ahmad Aldabbagh\\  % Your info here
+			 aaldabbagh3@gatech.edu}
+
+\date{}
+
+\setbeamerfont{frametitle}{series=\bfseries,parent=structure,size=\Huge}
+\setbeamercolor{frametitle}{fg=black}
+
+\begin{document}
+	
+	\frame{\titlepage}
+	
+	% TODO: Remove the 'draft' option in \documentclass once you have images to show. 
+	
+	\begin{frame}
+		\frametitle{1a. Edge Image}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=0.65\textheight]{./output/ps2-1-a-1.png}
+			\caption{img\_edges - ps2-1-a-1.png} 
+		\end{figure}	
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{2a. Hough Accumulator Array}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=0.65\textheight]{./output/ps2-2-a-1.png}
+			\caption{Normalized Accumulator Array - ps2-2-a-1.png} 
+		\end{figure}	
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{2b. Accumulator Array w/Peaks}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=0.65\textheight]{./output/ps2-2-b-1.png}
+			\caption{Accumulator Array with peaks highlighted ps2-2-b-1.png} 
+		\end{figure}	
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{2c. Image with Lines Drawn}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=0.65\textheight]{./output/ps2-2-c-1.png}
+			\caption{Original grayscale with lines drawn - ps2-2-c-1.png} 
+		\end{figure}	
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{3a. Smoothed Intensity Image}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=0.65\textheight]{./output/ps2-3-a-1.png}
+			\caption{ps2-3-a-1.png} 
+		\end{figure}	
+		
+	\end{frame}
+    
+    \begin{frame}
+		\frametitle{3b. Edge Image Comparison}
+		
+		\begin{figure}[!htb]
+			\centering
+			\subfloat[\small{Edge Image (original) - ps2-3-b-1.png}]{\includegraphics[width=0.4\textwidth]{./output/ps2-3-b-1.png}} \hspace{3em}
+			\subfloat[\small{Edge Image (smoothed) - ps2-3-b-2.png}]{\includegraphics[width=0.4\textwidth]{./output/ps2-3-b-2.png}} 
+		\end{figure}	
+		
+	\end{frame}
+    
+    \begin{frame}
+		\frametitle{3c. Hough Transform Smoothed}
+		
+		\begin{figure}[!htb]
+			\centering
+			\subfloat[\small{Accumulator Array with peaks highlighted - ps2-3-c-1.png}]{\includegraphics[width=0.4\textwidth]{./output/ps2-3-c-1.png}} \hspace{3em}
+			\subfloat[\small{Original intensity image with lines drawn - ps2-3-c-2.png}]{\includegraphics[width=0.4\textwidth]{./output/ps2-3-c-2.png}} 
+		\end{figure}	
+		
+	\end{frame}
+    
+    \begin{frame}
+		\frametitle{4a. Single-Point Method}
+		
+		\begin{figure}[!htb]
+			\centering
+			\subfloat[\small{Edge Image - ps2-4-a-1.png}]{\includegraphics[width=0.4\textwidth]{./output/ps2-4-a-1.png}} \hspace{3em}
+			\subfloat[\small{Accumulator Array with peaks highlighted - ps2-4-a-2.png}]{\includegraphics[width=0.4\textwidth]{./output/ps2-4-a-2.png}} 
+		\end{figure}	
+		
+	\end{frame}
+    
+    \begin{frame}
+		\frametitle{4b: Point-Plus Method}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=0.65\textheight]{./output/ps2-4-b-1.png}
+			\caption{Original monochrome image with circles drawn in color- ps2-4-b-1.png} 
+		\end{figure}	
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{5a. Coins and Pens}
+		
+		\begin{figure}[!htb]
+			\centering
+			\subfloat[\small{Accumulator Array with peaks highlighted - ps2-5-a-1.png}]{\includegraphics[width=0.4\textwidth]{./output/ps2-5-a-1.png}} \hspace{3em}
+			\subfloat[\small{Monochrome image with lines drawn - ps2-5-a-2.png}]{\includegraphics[width=0.4\textwidth]{./output/ps2-5-a-2.png}} 
+		\end{figure}	
+		
+	\end{frame}
+    
+    \begin{frame}
+		\frametitle{5b: Coins and Pens: Circles}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=0.65\textheight]{./output/ps2-5-b-1.png}
+			\caption{Original monochrome image with circles drawn - ps2-5-b-1.png} 
+		\end{figure}	
+		
+	\end{frame}
+    
+    \begin{frame}
+		\frametitle{5c: Coins and Pens: Circles (cont.)}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=0.65\textheight]{./output/ps2-5-c-1.png}
+			\caption{Original monochrome image with circles drawn - ps2-5-c-1.png} 
+		\end{figure}	
+		
+	\end{frame}
+    
+    \begin{frame}
+		\frametitle{6a: Images with Clutter (pens)}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=0.65\textheight]{./output/ps2-6-a-1.png}
+			\caption{Smoothed image with lines drawn - ps2-6-a-1.png} 
+		\end{figure}	
+		
+	\end{frame}
+    
+    \begin{frame}
+		\frametitle{6b: Images with Clutter (pens), part 2}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=0.65\textheight]{./output/ps2-6-b-1.png}
+			\caption{Smoothed image with lines drawn - ps2-6-b-1.png} 
+		\end{figure}	
+		
+	\end{frame}
+    
+    \begin{frame}
+		\frametitle{6c: Images with Clutter (coins)}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=0.65\textheight]{./output/ps2-6-c-1.png}
+			\caption{Smoothed image with circles drawn - ps2-6-c-1.png} 
+		\end{figure}	
+		
+	\end{frame}
+    
+	\begin{frame}[t]
+		\frametitle{7a: Discussion}
+		
+		\begin{normalsize}
+			\begin{itemize}
+				\setlength\itemsep{1em}
+				
+				\item[a.] \textbf{For each of the methods, what sorts of parameters did you use for finding lines in an image? Circles?  Did any of the parameters radically change?  (Describe your accumulator bin sizes, threshold, and neighborhood size parameters for finding peaks, and why/how you picked those.)
+}
+				
+				\item[] For the hough line method, the resolution (bin size) was extremely important to be able to detect the lines and circles correctly. I found that decreasing the resolution degraded the quality of detecting the correct lines. For both line and circle finding, changing the canny edge parameters were important as we sometimes need to remove or keep some details before applying the hough functions. After finding the edges, choosing the right thresholds and neighborhood deltas were extremely important as well. My accumulator bin sizes were 1 for rho and 1 deg for theta, these values were set empirically based on the results obtained by experimenting on the images. As for the thresholds and neighborhood size, these were chosen depending on the problem/image and were also chosen based on the best results. In some instances, we would like to eliminate close by peaks so increasing the neighborhood size would be useful. Also, applying a large threshold would eliminate peaks with a small vote count. Some of the values of threshold and nhood delta respectively are Q2:[ 120, (25,25) ]; Q3:[ 135, (10,10) ]; Q5b:[120, (25,25)].
+			\end{itemize}
+		\end{normalsize}
+		
+	\end{frame}
+
+	\begin{frame}[t]
+		\frametitle{7b:. Discussion}
+		
+		\begin{normalsize}
+			\begin{itemize}
+				\setlength\itemsep{1em}
+				
+				\item[b.] \textbf{What differences do you see when finding the edges in a noisy vs. regular image?}
+				
+				\item[] The main thing I noticed was in a noisy image, a smoothing filter is required to at least capture part of the edges in the image. Also, it is more difficult to fine tune the canny edge parameters in the noisy image while trying to retain as much information about the lines as possible. When we examine the resulting edges from both, we notice that the regular image has straight and sharp edges that clearly correlates to image while the noisy image has less distinctive edges and are quite crooked with the presence of points that do not represent edges. The thresholds in the regular image's canny edge detector were larger than that of the noisy image.
+				
+			\end{itemize}
+		\end{normalsize}
+		
+	\end{frame}
+
+	\begin{frame}[t]
+		\frametitle{7c: Discussion}
+		
+		\begin{normalsize}
+			\begin{itemize}
+				\setlength\itemsep{1em}
+				
+				\item[c.] \textbf{Is there any perceived difference in time or computational cost between the single-point and the point-plus gradient method implementations?}
+
+				\item[] Yes it is quite noticeable that the point-plus method runs much quicker than the single point method. This is quite expected since the single point method loops through a large array angles (360 degress) for every x,y point while the gradient method only runs twice (angle and angle+180) 
+				
+			\end{itemize}
+		\end{normalsize}
+		
+	\end{frame}
+    
+    \begin{frame}[t]
+		\frametitle{7d: Discussion}
+		
+		\begin{normalsize}
+			\begin{itemize}
+				\setlength\itemsep{1em}
+				
+				\item[d.] \textbf{For question 5, were you able to find all the circles?  Describe what you had to do to find circles.}
+
+				\item[] Yes I was able to find all the circles. I had to tweak the value of my threshold and nhood values to capture all the circles and get rid of multiple detections and false positives.
+				
+			\end{itemize}
+		\end{normalsize}
+		
+	\end{frame}
+    
+    \begin{frame}[t]
+		\frametitle{7e: Discussion}
+		
+		\begin{normalsize}
+			\begin{itemize}
+				\setlength\itemsep{1em}
+				
+				\item[e.] \textbf{In question 6, for a cluttered image, you likely found lines that are not the boundaries of the pen.  What problems did you face to overcome this?}
+
+				\item[] That is correct. The first thing done was to apply a smoothing filter. This along with parameter tuning, reduced the lines that are not related to the pen. However, there were some lines remaining. To remove them, I looked at the peaks and noticed that the pen edges should be parallel (have very close theta) and close to each other (difference in rho should be small). I created a function that puts an upper limit on difference in rho and theta between peaks and eliminates those that are far or do not have a close peak to form a pair.
+				
+			\end{itemize}
+		\end{normalsize}
+		
+	\end{frame}
+    
+    \begin{frame}[t]
+		\frametitle{7f: Discussion}
+		
+		\begin{normalsize}
+			\begin{itemize}
+				\setlength\itemsep{1em}
+				
+				\item[f.] \textbf{Likewise in question 6, there may have been false positives for circles.  Did you find such false positives? How would/did you get rid of them?  If you did these steps, mention where they are in the code by file, line no., and also include brief snippets}
+
+				\item[] To try to cover the different sizes of the coins, I used different radii values. I also played with the edge detection thresholds to remove most of the image's edges while trying to retain as much of the coins as possible. Removing false positives was achieved by playing with the threshold and nhood values. Finally, I created a function to remove intertwined or overlapping circles which is called "remove interwined circles".
+				
+			\end{itemize}
+		\end{normalsize}
+		
+	\end{frame}
+    
+    \begin{frame}
+		\frametitle{8: CHALLENGE PROBLEM}
+		
+        % Select the image name according to which part you picked.
+		\begin{figure}[!htb]
+		%	\centering
+		%	\includegraphics[height=0.65\textheight]{./output/ps2-8-[a/b]-1.png}
+		%	\caption{Results of Challenge Problem a or b - ps2-8-[a/b]-1.png} 
+		\end{figure}	
+		
+	\end{frame}
+    
+    \begin{frame}[t]
+		\frametitle{8: Details about the implementation}
+		
+		\begin{Large}
+			\begin{itemize}
+				\setlength\itemsep{1em}
+
+				\item Provide specific details about how you accomplished your results. You may add more slides if needed.
+				
+			\end{itemize}
+		\end{Large}
+		
+	\end{frame}
+    
+    \begin{frame}[t]
+		\frametitle{References}
+		
+		\begin{Large}
+			\begin{itemize}
+				\setlength\itemsep{1em}
+
+				\item Text
+				
+			\end{itemize}
+		\end{Large}
+		
+	\end{frame}
+	
+\end{document}

@@ -1,0 +1,47 @@
+{
+    "tests": [
+        {
+            "output": {
+                "passfail": "failed"
+            },
+            "traceback": "Traceback (most recent call last):\n  File \"/home/vmuser_zgsnucyo/CVResult.py\", line 29, in func_wrapper\n    ans = func(self)\n  File \"run.py\", line 332, in test_houghcircles\n    .format(correct, N, hough_threshold, nhood_radii, radii, additional_message, ref_circles.tolist(), circles.tolist()))\nAssertionError: Test failed to find enough correct circles: 0 / 10 circles found. Parameters: hough_threshold=100, nhood_radii=(3, 3), radii=[16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30].  Reference circles: [[68, 162, 28], [33, 266, 17], [429, 128, 16], [45, 424, 24], [120, 107, 22], [412, 37, 16], [254, 407, 16], [382, 325, 24], [266, 301, 18], [88, 370, 18]] Student circles: [[444, 134, 30], [427, 43, 30], [405, 348, 30], [279, 306, 30], [269, 413, 30], [140, 127, 30], [101, 375, 30], [82, 156, 30], [68, 447, 30], [43, 270, 27]]\n",
+            "description": "Tests find_circles (30 points)"
+        },
+        {
+            "output": {
+                "passfail": "passed"
+            },
+            "traceback": "",
+            "description": "Tests hough_lines_acc (20 points)"
+        },
+        {
+            "output": {
+                "passfail": "passed"
+            },
+            "traceback": "",
+            "description": "Tests hough_peaks with lines (15 points)"
+        },
+        {
+            "output": {
+                "passfail": "passed"
+            },
+            "traceback": "",
+            "description": "Tests hough_peaks with circles (10 points)"
+        },
+        {
+            "output": {
+                "passfail": "passed"
+            },
+            "traceback": "",
+            "description": "Tests hough_circles_acc using point plus (15 points)"
+        },
+        {
+            "output": {
+                "passfail": "passed"
+            },
+            "traceback": "",
+            "description": "Tests hough_circles_acc on a single point (10 points)"
+        }
+    ],
+    "unauthorized_lib_calls": []
+}
